@@ -1,0 +1,177 @@
+@import "tailwindcss";
+body {
+  @apply min-h-screen bg-white dark:bg-gray-900;
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+/* Dark mode styles */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Remove any default color schemes */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Ensure proper text contrast */
+.text-primary {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.text-secondary {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.text-muted {
+  @apply text-gray-600 dark:text-gray-400;
+}
+
+/* Add this to your existing CSS */
+.typing-test-mode {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.typing-test-mode nav {
+  display: none;
+}
+
+/* Add animation for success message */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s ease-out;
+}
+
+/* Add these animations to your existing CSS */
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blob {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.1);
+  }
+  66% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Custom scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark mode scrollbar */
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Hide scrollbar when not hovering */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.custom-scrollbar:hover {
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.dark .custom-scrollbar:hover {
+  scrollbar-color: #475569 transparent;
+}
+
+/* Add these animations for the text display */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-pulse {
+  animation: cursor-blink 1s ease-in-out infinite;
+}
+
+/* Add a subtle hover effect for characters */
+.typing-text-char {
+  transition: all 0.2s ease;
+}
+
+.typing-text-char:hover {
+  transform: translateY(-1px);
+}
+
+/* Add a subtle shadow to the text container */
+.text-container {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Add a subtle gradient background for the text container */
+.text-gradient-bg {
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.6), rgba(224, 231, 255, 0.6));
+}
+
+.dark .text-gradient-bg {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(67, 56, 202, 0.1));
+}
