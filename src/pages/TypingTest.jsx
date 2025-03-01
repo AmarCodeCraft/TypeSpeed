@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { generateText } from '../utils/TextGenerator';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -97,6 +96,33 @@ function TypingTest() {
 
   // Determine the next character to type
   const nextChar = text[currentIndex] ? text[currentIndex].toLowerCase() : null;
+
+  // Add the text generation function directly in this file:
+  const generateText = (length = 200) => {
+    const words = [
+      "the", "be", "to", "of", "and", "a", "in", "that", "have", "I", 
+      "it", "for", "not", "on", "with", "he", "as", "you", "do", "at", 
+      "this", "but", "his", "by", "from", "they", "we", "say", "her", "she", 
+      "or", "an", "will", "my", "one", "all", "would", "there", "their", "what", 
+      "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
+      "when", "make", "can", "like", "time", "no", "just", "him", "know", "take", 
+      "people", "into", "year", "your", "good", "some", "could", "them", "see", "other", 
+      "than", "then", "now", "look", "only", "come", "its", "over", "think", "also",
+      "code", "type", "fast", "learn", "practice", "skill", "improve", "speed", "accuracy", "keyboard"
+    ];
+    
+    let result = [];
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * words.length);
+      result.push(words[randomIndex]);
+    }
+    
+    // Add some basic formatting
+    let text = result.join(" ");
+    text = text.charAt(0).toUpperCase() + text.slice(1);
+    
+    return text;
+  };
 
   return (
     <div className="fixed inset-0 w-full h-full bg-slate-50 dark:bg-slate-900 flex">
