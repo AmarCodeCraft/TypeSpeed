@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { generateText } from '../utils/textGenerator';
+import { generateText } from '../utils/TextGenerator';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 

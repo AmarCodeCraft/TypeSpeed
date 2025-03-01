@@ -1,22 +1,20 @@
-export const generateText = (wordCount = 20) => {
-  // Sample text snippets
-  const snippets = [
-    "The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English alphabet.",
-    "Programming is the process of creating a set of instructions that tell a computer how to perform a task.",
-    "Artificial intelligence is intelligence demonstrated by machines, as opposed to natural intelligence displayed by animals including humans.",
-    "The World Wide Web, commonly known as the Web, is an information system enabling documents and other web resources to be accessed over the Internet.",
-    "Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.",
-    "Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks that aim to access, change, or destroy sensitive information."
+export const generateText = (length = 200) => {
+  const words = [
+    "the", "be", "to", "of", "and", "a", "in", "that", "have", "I", 
+    "it", "for", "not", "on", "with", "he", "as", "you", "do", "at", 
+    "this", "but", "his", "by", "from", "they", "we", "say", "her", "she", 
+    "or", "an", "will", "my", "one", "all", "would", "there", "their", "what", 
+    "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
+    "when", "make", "can", "like", "time", "no", "just", "him", "know", "take", 
+    "people", "into", "year", "your", "good", "some", "could", "them", "see", "other", 
+    "than", "then", "now", "look", "only", "come", "its", "over", "think", "also"
   ];
   
-  // Combine all snippets and split into words
-  const allWords = snippets.join(' ').split(/\s+/);
+  let result = [];
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    result.push(words[randomIndex]);
+  }
   
-  // Select random starting point
-  const startIndex = Math.floor(Math.random() * (allWords.length - wordCount));
-  
-  // Get the requested number of words
-  const selectedWords = allWords.slice(startIndex, startIndex + wordCount);
-  
-  return selectedWords.join(' ');
+  return result.join(" ");
 };
